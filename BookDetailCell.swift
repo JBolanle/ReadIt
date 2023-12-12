@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct BookDetailCell: View {
+    let book: Book
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Image(.iamnwcover)
+                .resizable()
+                .frame(width: 60, height: 90)
+                .aspectRatio(2/3, contentMode: .fit)
+            VStack(alignment: .leading, spacing: 5) {
+                Text(book.title)
+                    .font(.headline)
+                Text("by \(book.author)")
+                    .font(.subheadline)
+            }
+        }
+        .fontDesign(.rounded)
     }
 }
 
 #Preview {
-    BookDetailCell()
+    BookDetailCell(book: Book.sampleBook)
 }
