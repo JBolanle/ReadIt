@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LibraryView: View {
+    @State var isPresentingAddBookManually = false
+
     var body: some View {
         NavigationStack {
             VStack{
@@ -15,10 +17,13 @@ struct LibraryView: View {
                     .font(.title2)
                     .padding(.bottom, 5)
 
-                // Take user to add new book view
+                // Take user to add new book view to add manually, get from online, or to scan barcode
                 Menu("Add a new book", systemImage: "plus.square") {
                     Button("Add Manually", systemImage: "pencil.line") {
-                        //
+                        isPresentingAddBookManually.toggle()
+                    }
+                    .sheet(isPresented: $isPresentingAddBookManually) {
+                        AddNewBookManuallyView()
                     }
                     Button("Search Online", systemImage: "magnifyingglass") {
                         //

@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct AddNewBookManuallyView: View {
-    
+    @Environment(\.dismiss) var dismiss
+    @State private var newBook = Book.sampleBook // for testing.
+
+
     var body: some View {
         VStack {
             Form{
-//                TextField("Title")
+                Section("Title") {
+                    TextField("Title", text: $newBook.title)
+                    TextField("Subtitle", text: $newBook.title)
+                }
+                Section("Author") {
+                    TextField(" ", text: $newBook.author)
+                }
             }
         }
     }
