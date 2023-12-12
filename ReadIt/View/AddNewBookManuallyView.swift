@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct AddNewBookManuallyView: View {
-    @State private var searchText = ""
-    @State private var searchPrompt = "Search by title, author, or ISBN."
     
     var body: some View {
         VStack {
-            Text("hi")
+            Form{
+//                TextField("Title")
+            }
         }
     }
 }

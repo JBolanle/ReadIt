@@ -12,9 +12,12 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
+            LibraryView()
+                .tabItem { Label("Library", systemImage: "books.vertical") }
             BookDetailView(book: Book.sampleBook)
                 .tabItem { Label("Book", systemImage: "book") }
         }
+        .fontDesign(.rounded)
     }
 }
 

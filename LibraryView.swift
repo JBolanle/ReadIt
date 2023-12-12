@@ -9,7 +9,28 @@ import SwiftUI
 
 struct LibraryView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack{
+                Text("Your library is empty.")
+                    .font(.title2)
+                    .padding(.bottom, 5)
+
+                // Take user to add new book view
+                Menu("Add a new book", systemImage: "plus.square") {
+                    Button("Add Manually", systemImage: "pencil.line") {
+                        //
+                    }
+                    Button("Search Online", systemImage: "magnifyingglass") {
+                        //
+                    }
+                    Button("Scan Barcode", systemImage: "barcode.viewfinder") {
+                        //
+                    }
+                }
+            }
+            .navigationTitle("Library")
+            .navigationBarTitleDisplayMode(.inline)
+        } // NavigationStack
     }
 }
 
