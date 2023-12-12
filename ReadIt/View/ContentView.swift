@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    let book: Book
 
     var body: some View {
-        Text("Test")
+        TabView {
+            BookDetailView(book: Book.sampleBook)
+                .tabItem { Label("Book", systemImage: "book") }
+        }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(book: Book.sampleBook)
 }
