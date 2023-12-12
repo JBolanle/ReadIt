@@ -9,7 +9,11 @@ import SwiftUI
 
 struct BookDetailView: View {
     @Environment(\.colorScheme) var colorScheme
+
     let book: Book
+
+    @State private var bookTitle = Book.sampleBook.title
+    @State private var isTitleHidden = true
 
     var body: some View {
         NavigationStack {
@@ -81,7 +85,11 @@ struct BookDetailView: View {
                     .padding()
                 } // End ScrollView
                 .navigationTitle(book.title)
-                .toolbar(.hidden)
+                .navigationBarTitleDisplayMode(.inline)
+                .onAppear() {
+                    self.isTitleHidden = false
+                }
+
 
             } // End NavigationStack
         }
