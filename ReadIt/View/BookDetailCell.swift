@@ -19,8 +19,10 @@ struct BookDetailCell: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(book.title)
                     .font(.headline)
+                    .multilineTextAlignment(.leading)
                 Text("by \(book.author)")
                     .font(.subheadline)
+                    .multilineTextAlignment(.leading)
             }
         }
         .fontDesign(.rounded)

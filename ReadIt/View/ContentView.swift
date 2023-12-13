@@ -14,8 +14,8 @@ struct ContentView: View {
         TabView {
             LibraryView()
                 .tabItem { Label("Library", systemImage: "books.vertical") }
-            BookDetailView(book: Book.sampleBook)
-                .tabItem { Label("Book", systemImage: "book") }
+            FindBookOnlineView()
+                .tabItem { Label("Search", systemImage: "magnifyingglass") }
         }
         .fontDesign(.rounded)
     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LibraryView: View {
     @State var isPresentingAddBookManually = false
+    @State var isPresentingAddBookOnline = false
 
     var body: some View {
         NavigationStack {
@@ -26,10 +27,10 @@ struct LibraryView: View {
                         AddNewBookManuallyView()
                     }
                     Button("Search Online", systemImage: "magnifyingglass") {
-                        //
+                        isPresentingAddBookOnline.toggle()
                     }
                     Button("Scan Barcode", systemImage: "barcode.viewfinder") {
-                        //
+                        FindBookOnlineView()
                     }
                 }
             }
