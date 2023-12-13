@@ -25,6 +25,16 @@ struct FindBookOnlineView: View {
             }
             .navigationTitle("Find a book")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Menu("", systemImage: "plus.square") {
+                    Button("Add Manually", systemImage: "pencil") {
+
+                    }
+                    Button("Scan Barcode", systemImage: "barcode.viewfinder") {
+                        
+                    }
+                }
+            }
         }
         .searchable(text: $searchText)
     }
