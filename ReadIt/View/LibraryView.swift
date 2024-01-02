@@ -14,13 +14,15 @@ struct LibraryView: View {
     var body: some View {
         NavigationStack {
             VStack{
-                Text("Your library is empty.")
-                    .font(.title2)
-                    .padding(.bottom, 5)
                 Label("", systemImage: "books.vertical")
                     .font(.largeTitle)
                     .foregroundStyle(Color.gray)
                     .opacity(0.5)
+                    .padding()
+                Text("Your library is empty. Please add a new book.")
+                    .font(.title2)
+                    .padding(.bottom, 5)
+                    .multilineTextAlignment(.center)
             }
             .navigationTitle("Library")
             .navigationBarTitleDisplayMode(.inline)
