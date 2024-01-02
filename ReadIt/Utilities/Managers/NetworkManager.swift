@@ -14,8 +14,11 @@ final class NetworkManager {
     static let baseURL = "https://www.googleapis.com/books/v1/"
     static private let apiKEY = "AIzaSyB1XlVhCzFX34tl4XAcQFR3Xow2j5PUz3A"
 
+    @Published var searchText = ""
     private let bookSearchURL = baseURL + "volumes?q="
     private let bookDetailURL = baseURL + "volumes/"
+
+
 
     private init() {}
 

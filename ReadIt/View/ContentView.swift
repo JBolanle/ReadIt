@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let book: Book
+
 
     var body: some View {
         TabView {
@@ -22,5 +22,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(book: Book.sampleBook)
+    ContentView()
 }

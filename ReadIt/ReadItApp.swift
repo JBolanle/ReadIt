@@ -11,7 +11,7 @@ import SwiftUI
 struct ReadItApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(book: Book.sampleBook)
+            ContentView()
         }
     }
 }

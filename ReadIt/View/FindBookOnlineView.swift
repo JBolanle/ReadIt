@@ -6,43 +6,27 @@
 //
 
 import SwiftUI
+let networkManager = NetworkManager.self
 
 struct FindBookOnlineView: View {
-    @State private var searchText = ""
+    @Published var searchText = ""
+//    @State private var searchText = ""
     @State private var searchPrompt = "Search by title, author, or ISBN."
 
     var body: some View {
         NavigationStack {
             VStack {
                 ScrollView {
-                    NavigationLink {
-                        BookDetailView(book: Book.sampleBook)
-                    } label: {
-                        BookDetailCell(book: Book.sampleBook)
-                            .foregroundStyle(Color.primary)
-                            .contextMenu(ContextMenu(menuItems: {
-                                Button("Add to Library", systemImage: "plus") {
-
-                                }
-                            }))
-                    }
+//                    Text("Hello")
                 }
-                Spacer()
             }
             .navigationTitle("Find a book")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                Menu("", systemImage: "plus.square") {
-                    Button("Add Manually", systemImage: "pencil") {
-
-                    }
-                    Button("Scan Barcode", systemImage: "barcode.viewfinder") {
-
-                    }
-                }
-            }
         }
         .searchable(text: $searchText, prompt: searchPrompt)
+        .onChange(of: searchText) { oldValue, newValue in
+            networkManager.searchBooks(NetworkManager)
+        }
     }
 }
 

@@ -1,34 +1,34 @@
+////
+////  BookDetailCell.swift
+////  ReadIt
+////
+////  Created by Jumoke Bolanle on 12/12/23.
+////
 //
-//  BookDetailCell.swift
-//  ReadIt
+//import SwiftUI
 //
-//  Created by Jumoke Bolanle on 12/12/23.
+//struct BookDetailCell: View {
+//    let book: Book
 //
-
-import SwiftUI
-
-struct BookDetailCell: View {
-    let book: Book
-
-    var body: some View {
-        HStack {
-            Image(.iamnwcover)
-                .resizable()
-                .frame(width: 60, height: 90)
-                .aspectRatio(2/3, contentMode: .fit)
-            VStack(alignment: .leading, spacing: 5) {
-                Text(book.title)
-                    .font(.headline)
-                    .multilineTextAlignment(.leading)
-                Text("by \(book.author)")
-                    .font(.subheadline)
-                    .multilineTextAlignment(.leading)
-            }
-        }
-        .fontDesign(.rounded)
-    }
-}
-
-#Preview {
-    BookDetailCell(book: Book.sampleBook)
-}
+//    var body: some View {
+//        HStack {
+//            Image(.iamnwcover)
+//                .resizable()
+//                .frame(width: 60, height: 90)
+//                .aspectRatio(2/3, contentMode: .fit)
+//            VStack(alignment: .leading, spacing: 5) {
+//                Text(book.title)
+//                    .font(.headline)
+//                    .multilineTextAlignment(.leading)
+////                Text("by \(book.authors)")
+////                    .font(.subheadline)
+////                    .multilineTextAlignment(.leading)
+//            }
+//        }
+//        .fontDesign(.rounded)
+//    }
+//}
+//
+////#Preview {
+////    BookDetailCell(book: Book.sampleBook)
+////}
